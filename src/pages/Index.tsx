@@ -1,29 +1,11 @@
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
-import { useToast } from '@/hooks/use-toast';
 import Navigation from '@/components/Navigation';
 
 export default function Index() {
-  const [email, setEmail] = useState('');
-  const { toast } = useToast();
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      toast({
-        title: "Успешно! 🎉",
-        description: "Вы подписались на обновления ЯЗАРЯДКА",
-      });
-      setEmail('');
-    }
-  };
-
   const features = [
     {
-      icon: 'Zap',
+      icon: 'Activity',
       title: 'Персональные программы',
       description: 'Тренировки подстраиваются под твой уровень и цели'
     },
@@ -41,459 +23,186 @@ export default function Index() {
       icon: 'BarChart3',
       title: 'Умная аналитика',
       description: 'Отслеживай прогресс в режиме реального времени'
-    },
-    {
-      icon: 'Heart',
-      title: 'Забота о здоровье',
-      description: 'Контроль пульса и калорий с ИИ-рекомендациями'
-    },
-    {
-      icon: 'Timer',
-      title: 'Быстрые тренировки',
-      description: 'От 5 до 60 минут под любое расписание'
-    }
-  ];
-
-  const screenshots = [
-    { 
-      id: 1, 
-      alt: 'Главный экран приложения',
-      image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=400&h=800&fit=crop',
-      title: 'Дашборд'
-    },
-    { 
-      id: 2, 
-      alt: 'Тренировка в процессе',
-      image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=800&fit=crop',
-      title: 'Тренировки'
-    },
-    { 
-      id: 3, 
-      alt: 'Статистика прогресса',
-      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=800&fit=crop',
-      title: 'Статистика'
-    }
-  ];
-
-  const pricingPlans = [
-    {
-      name: 'Базовый',
-      price: '0',
-      period: 'навсегда',
-      description: 'Для начинающих спортсменов',
-      features: [
-        'Доступ к базовым тренировкам',
-        'Трекер активности',
-        'Календарь тренировок',
-        'Сообщество пользователей'
-      ],
-      icon: 'Dumbbell',
-      popular: false
-    },
-    {
-      name: 'Про',
-      price: '499',
-      period: 'в месяц',
-      description: 'Для серьезных атлетов',
-      features: [
-        'Все из Базового плана',
-        'Персональные программы тренировок',
-        'ИИ-рекомендации питания',
-        'Видео-инструкции HD',
-        'Аналитика прогресса',
-        'Приоритетная поддержка'
-      ],
-      icon: 'Flame',
-      popular: true
-    },
-    {
-      name: 'Элитный',
-      price: '1999',
-      period: 'в месяц',
-      description: 'Максимум возможностей',
-      features: [
-        'Все из Про плана',
-        'Персональный тренер онлайн',
-        'Индивидуальный план питания',
-        'Видеозвонки с тренером 2 раза/неделю',
-        'Эксклюзивные тренировки',
-        'Доступ к закрытым мероприятиям'
-      ],
-      icon: 'Crown',
-      popular: false
-    }
-  ];
-
-  const reviews = [
-    {
-      name: 'Анна Иванова',
-      rating: 5,
-      text: 'Сбросила 8 кг за 2 месяца! Приложение просто огонь 🔥',
-      avatar: '👩'
-    },
-    {
-      name: 'Дмитрий Петров',
-      rating: 5,
-      text: 'Наконец-то нашел мотивацию тренироваться регулярно. Рекомендую!',
-      avatar: '👨'
-    },
-    {
-      name: 'Мария Сидорова',
-      rating: 5,
-      text: 'Лучшее фитнес-приложение! Простое, красивое и эффективное',
-      avatar: '👩‍🦰'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen bg-gradient-to-br from-green-600 via-green-500 to-green-400 relative overflow-hidden">
       <Navigation />
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl" />
-        
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in text-left">
-              <h1 className="text-6xl md:text-8xl font-black mb-6 gradient-text">
-                ЯЗАРЯДКА
-              </h1>
-              <p className="text-xl md:text-3xl text-muted-foreground mb-6 max-w-3xl">
-                Твой персональный фитнес-тренер в кармане! 💪
-              </p>
-              <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl">
-                Преврати тренировки в увлекательную игру. Достигай целей быстрее с ИИ-поддержкой
-              </p>
+      
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="max-w-md w-full">
+          <div className="relative aspect-[9/19] max-w-sm mx-auto">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-800 to-green-600 rounded-[3rem] shadow-2xl overflow-hidden border-8 border-black">
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button 
-                  size="lg" 
-                  className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 shadow-2xl"
-                >
-                  <Icon name="Apple" className="mr-2" size={24} />
-                  App Store
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="text-lg px-8 py-6 border-2 border-primary hover:bg-primary/10 transition-all hover:scale-105 shadow-xl"
-                >
-                  <Icon name="Play" className="mr-2" size={24} />
-                  Google Play
-                </Button>
-              </div>
-
-              <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Icon name="Star" className="text-accent" size={20} />
-                  <span>4.9 рейтинг</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Download" className="text-secondary" size={20} />
-                  <span>500K+ загрузок</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Users" className="text-primary" size={20} />
-                  <span>200K+ пользователей</span>
+              <div className="absolute top-0 left-0 right-0 h-8 bg-black/40 backdrop-blur-sm flex items-center justify-between px-6 text-white text-xs">
+                <span className="font-semibold">11:22</span>
+                <div className="flex gap-1">
+                  <Icon name="Wifi" size={14} />
+                  <Icon name="Battery" size={14} />
                 </div>
               </div>
-            </div>
 
-            <div className="relative animate-scale-in">
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/30 to-secondary/30 p-1 shadow-2xl hover:shadow-primary/50 transition-all duration-500">
-                <div className="relative aspect-video bg-black/90 rounded-2xl overflow-hidden group cursor-pointer">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-                  <video 
-                    autoPlay 
-                    muted 
-                    loop 
-                    playsInline
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                    poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=450&fit=crop"
-                  >
-                    <source src="https://player.vimeo.com/external/464764510.hd.mp4?s=84e2e8f3e88c7f0f4d8e64f5ae1e6e2f&profile_id=174" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <Icon name="Play" className="text-white ml-1" size={40} />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3">
-                      <p className="text-white text-sm font-semibold">Смотри, как это работает</p>
-                      <p className="text-white/70 text-xs">Демо тренировки от профи</p>
-                    </div>
+              <div 
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: `
+                    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='10' y='30' font-size='40' fill='white' opacity='0.3'%3E🏀%3C/text%3E%3Ctext x='60' y='70' font-size='30' fill='white' opacity='0.3'%3E⚽%3C/text%3E%3Ctext x='20' y='80' font-size='25' fill='white' opacity='0.3'%3E🏋️%3C/text%3E%3Ctext x='70' y='40' font-size='35' fill='white' opacity='0.3'%3E🎾%3C/text%3E%3C/svg%3E")
+                  `,
+                  backgroundSize: '200px 200px',
+                  backgroundRepeat: 'repeat'
+                }}
+              />
+
+              <div className="relative h-full flex flex-col items-center justify-center px-8 text-center">
+                
+                <div className="mb-8">
+                  <h1 className="text-6xl font-black text-white tracking-tight mb-2" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                    ЯЗАРЯДКА
+                  </h1>
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-green-600 font-bold text-xl ml-auto -mt-8 mr-4">
+                    AI
                   </div>
                 </div>
-              </div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/20 rounded-full blur-3xl" />
-            </div>
-          </div>
-          
 
-        </div>
-      </section>
+                <p className="text-xl text-white/95 font-medium mb-12">
+                  Заряди страну, семью, себя!
+                </p>
 
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Почему <span className="gradient-text">ЯЗАРЯДКА</span>?
-          </h2>
-          <p className="text-center text-muted-foreground mb-16 text-lg">
-            Всё, что нужно для достижения твоих фитнес-целей
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <Card 
-                key={index}
-                className="bg-card/50 backdrop-blur border-border hover:border-primary transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
-                    <Icon name={feature.icon as any} className="text-white" size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 bg-gradient-to-b from-transparent to-primary/5">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Приложение в действии
-          </h2>
-          <p className="text-center text-muted-foreground mb-16 text-lg">
-            Интуитивный интерфейс для максимальных результатов
-          </p>
-          
-          <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {screenshots.map((screenshot, index) => (
-                <div 
-                  key={screenshot.id}
-                  className="group relative animate-fade-in"
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                >
-                  <div className="relative aspect-[9/16] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 p-2 hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/30">
-                    <div className="relative h-full rounded-2xl overflow-hidden bg-black">
-                      <img 
-                        src={screenshot.image} 
-                        alt={screenshot.alt}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h4 className="text-white font-bold text-xl mb-2">{screenshot.title}</h4>
-                        <p className="text-white/80 text-sm">{screenshot.alt}</p>
-                      </div>
-                      <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-full p-2">
-                        <Icon name="Smartphone" className="text-white" size={20} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 bg-gradient-to-b from-transparent to-primary/5">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Выбери свой план
-          </h2>
-          <p className="text-center text-muted-foreground mb-16 text-lg">
-            Начни бесплатно или выбери премиум для максимума результатов
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            {pricingPlans.map((plan, index) => (
-              <Card 
-                key={index}
-                className={`relative bg-card/50 backdrop-blur border-border transition-all hover:scale-105 hover:shadow-2xl animate-fade-in ${
-                  plan.popular ? 'border-2 border-primary shadow-xl shadow-primary/20 md:-mt-4 md:scale-105' : 'hover:border-primary'
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg">
-                    🔥 Популярный
-                  </div>
-                )}
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
-                    <Icon name={plan.icon as any} className="text-white" size={28} />
-                  </div>
-                  <h3 className="text-2xl font-black mb-2">{plan.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
-                  <div className="mb-6">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-5xl font-black gradient-text">{plan.price}</span>
-                      <span className="text-2xl font-bold text-muted-foreground">₽</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{plan.period}</p>
-                  </div>
+                <div className="mt-auto mb-16">
                   <Button 
-                    className={`w-full mb-6 ${
-                      plan.popular 
-                        ? 'bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white shadow-lg' 
-                        : 'bg-muted hover:bg-muted/80'
-                    }`}
-                    size="lg"
+                    size="lg" 
+                    className="bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white text-xl font-bold px-16 py-6 rounded-2xl shadow-2xl transition-all hover:scale-105"
                   >
-                    {plan.price === '0' ? 'Начать бесплатно' : 'Выбрать план'}
+                    НАЧАТЬ
                   </Button>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
-                        <Icon name="CheckCircle2" className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-green-300/30 rounded-full blur-3xl" />
+            <div className="absolute -top-4 -left-4 w-32 h-32 bg-green-400/30 rounded-full blur-3xl" />
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4">
+      <section className="relative py-20 px-4 bg-white/5 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Что говорят пользователи
+          <h2 className="text-4xl md:text-5xl font-black text-white text-center mb-4">
+            Возможности приложения
           </h2>
-          <p className="text-center text-muted-foreground mb-16 text-lg">
-            Тысячи довольных спортсменов уже с нами
+          <p className="text-xl text-white/80 text-center mb-12">
+            Всё для твоих спортивных целей 🎯
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {reviews.map((review, index) => (
-              <Card 
-                key={index}
-                className="bg-card/50 backdrop-blur border-border hover:border-secondary transition-all hover:scale-105 hover:shadow-xl animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, idx) => (
+              <div 
+                key={idx}
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all hover:scale-105 hover:shadow-2xl"
               >
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="text-4xl">{review.avatar}</div>
-                    <div>
-                      <h4 className="font-bold">{review.name}</h4>
-                      <div className="flex gap-1">
-                        {[...Array(review.rating)].map((_, i) => (
-                          <Icon key={i} name="Star" className="text-accent fill-accent" size={16} />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">{review.text}</p>
-                </CardContent>
-              </Card>
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-4">
+                  <Icon name={feature.icon as any} className="text-green-600" size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                <p className="text-white/70">{feature.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-b from-primary/5 to-transparent">
+      <section className="relative py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            Начни путь к лучшей версии себя
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            Начни тренироваться прямо сейчас! 💪
           </h2>
-          <p className="text-muted-foreground mb-12 text-lg">
-            Подпишись на новости и получи бонус при скачивании! 🎁
+          <p className="text-xl text-white/90 mb-8">
+            Скачай приложение и получи первую неделю премиум-доступа бесплатно
           </p>
           
-          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto mb-12">
-            <Input
-              type="email"
-              placeholder="Введи свой email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-6 py-6 text-lg bg-card/50 backdrop-blur border-border"
-              required
-            />
-            <Button 
-              type="submit"
-              size="lg"
-              className="px-8 py-6 text-lg bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105"
-            >
-              Подписаться
-            </Button>
-          </form>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 shadow-2xl"
+              className="bg-white text-green-600 hover:bg-white/90 text-lg px-8 py-6 rounded-2xl shadow-2xl transition-all hover:scale-105 font-bold"
             >
               <Icon name="Apple" className="mr-2" size={24} />
-              Скачать в App Store
+              App Store
             </Button>
             <Button 
               size="lg" 
-              variant="outline"
-              className="text-lg px-8 py-6 border-2 border-primary hover:bg-primary/10 transition-all hover:scale-105"
+              className="bg-gradient-to-r from-gray-900 to-gray-800 text-white hover:from-gray-800 hover:to-gray-700 text-lg px-8 py-6 rounded-2xl shadow-2xl transition-all hover:scale-105 font-bold"
             >
               <Icon name="Play" className="mr-2" size={24} />
-              Скачать в Google Play
+              Google Play
             </Button>
+          </div>
+
+          <div className="flex flex-wrap gap-8 justify-center text-white/90">
+            <div className="flex items-center gap-2">
+              <Icon name="Star" className="text-yellow-300 fill-yellow-300" size={20} />
+              <span className="font-semibold">4.9 рейтинг</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Icon name="Download" className="text-white" size={20} />
+              <span className="font-semibold">500K+ загрузок</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Icon name="Users" className="text-white" size={20} />
+              <span className="font-semibold">200K+ активных</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer className="py-12 px-4 border-t border-border">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-2xl font-black gradient-text mb-4">ЯЗАРЯДКА</h3>
-              <p className="text-muted-foreground">
-                Персональный фитнес-тренер в твоем кармане
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-4">Контакты</h4>
-              <div className="space-y-2 text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Icon name="Mail" size={16} />
-                  <span>support@yazaryadka.ru</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Phone" size={16} />
-                  <span>+7 (999) 123-45-67</span>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-4">Мы в соцсетях</h4>
-              <div className="flex gap-4">
-                <Button variant="outline" size="icon" className="hover:bg-primary/10 hover:border-primary transition-all">
-                  <Icon name="Instagram" size={20} />
-                </Button>
-                <Button variant="outline" size="icon" className="hover:bg-primary/10 hover:border-primary transition-all">
-                  <Icon name="Youtube" size={20} />
-                </Button>
-                <Button variant="outline" size="icon" className="hover:bg-primary/10 hover:border-primary transition-all">
-                  <Icon name="Facebook" size={20} />
-                </Button>
-                <Button variant="outline" size="icon" className="hover:bg-primary/10 hover:border-primary transition-all">
-                  <Icon name="Twitter" size={20} />
-                </Button>
-              </div>
-            </div>
-          </div>
+      <section className="relative py-20 px-4 bg-black/20 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black text-white text-center mb-4">
+            Что говорят пользователи 💬
+          </h2>
+          <p className="text-xl text-white/80 text-center mb-12">
+            Более 200 000 довольных спортсменов
+          </p>
           
-          <div className="pt-8 border-t border-border text-center text-muted-foreground">
-            <p>© 2024 ЯЗАРЯДКА. Все права защищены.</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: 'Анна', text: 'Сбросила 8 кг за 2 месяца! Огонь 🔥', avatar: '👩' },
+              { name: 'Дмитрий', text: 'Наконец-то регулярные тренировки!', avatar: '👨' },
+              { name: 'Мария', text: 'Лучшее фитнес-приложение!', avatar: '👩‍🦰' }
+            ].map((review, idx) => (
+              <div 
+                key={idx}
+                className="bg-white rounded-2xl p-6 shadow-xl"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-4xl">{review.avatar}</div>
+                  <div>
+                    <div className="font-bold text-green-700">{review.name}</div>
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" className="text-yellow-400 fill-yellow-400" size={14} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700">{review.text}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <footer className="relative py-8 px-4 bg-black/30 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto text-center text-white/70">
+          <p>ЯЗАРЯДКА © 2024 • Заряди страну, семью, себя!</p>
         </div>
       </footer>
     </div>
