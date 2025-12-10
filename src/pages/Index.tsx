@@ -52,12 +52,21 @@ export default function Index() {
             </motion.div>
             
             <motion.h1 
-              className="text-5xl md:text-7xl font-black leading-tight"
+              className="text-5xl md:text-7xl font-black leading-tight flex items-center gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               ЯЗАРЯДКА
+              <motion.span 
+                className="text-3xl md:text-4xl bg-white text-green-600 px-3 py-1 rounded-xl font-black"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+              >
+                AI
+              </motion.span>
             </motion.h1>
             
             <motion.p 
@@ -545,7 +554,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-black mb-4">ЯЗАРЯДКА</h3>
+              <h3 className="text-2xl font-black mb-4 flex items-center gap-2">
+                ЯЗАРЯДКА
+                <span className="text-base bg-gradient-to-r from-green-400 to-green-300 text-gray-900 px-2 py-1 rounded-lg">AI</span>
+              </h3>
               <p className="text-gray-400 text-sm">
                 Мобильное приложение для детских спортивных тренировок
               </p>
@@ -600,7 +612,11 @@ export default function Index() {
           </div>
           
           <div className="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
-            <p>ЯЗАРЯДКА © 2024 • Заряди страну, семью, себя!</p>
+            <p className="flex items-center justify-center gap-2">
+              ЯЗАРЯДКА
+              <span className="bg-gradient-to-r from-green-400 to-green-300 text-gray-900 px-2 py-0.5 rounded text-xs font-bold">AI</span>
+              © 2024 • Заряди страну, семью, себя!
+            </p>
           </div>
         </div>
       </footer>
