@@ -1,5 +1,6 @@
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import Navigation from '@/components/Navigation';
 
 export default function Brandbook() {
   const colors = [
@@ -38,6 +39,7 @@ export default function Brandbook() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <Navigation />
       {/* Header */}
       <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">

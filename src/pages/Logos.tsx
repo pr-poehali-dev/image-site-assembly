@@ -1,8 +1,10 @@
 import Icon from '@/components/ui/icon';
+import Navigation from '@/components/Navigation';
 
 export default function Logos() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center p-8">
+      <Navigation />
       <div className="max-w-6xl w-full">
         <h1 className="text-5xl font-bold text-white text-center mb-4">
           Варианты логотипа ЯЗАРЯДКА

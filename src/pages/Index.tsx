@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import Navigation from '@/components/Navigation';
 
 export default function Index() {
   const [email, setEmail] = useState('');
@@ -146,6 +147,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <Navigation />
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl" />
         
