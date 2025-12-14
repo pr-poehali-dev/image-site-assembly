@@ -14,7 +14,7 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-600 via-green-500 to-green-400">
+    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400">
       <Navigation />
       
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
@@ -59,7 +59,7 @@ export default function Index() {
             >
               ЯЗАРЯДКА
               <motion.span 
-                className="text-3xl md:text-4xl bg-white text-green-600 px-3 py-1 rounded-xl font-black"
+                className="text-3xl md:text-4xl bg-white text-blue-600 px-3 py-1 rounded-xl font-black"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
@@ -96,7 +96,7 @@ export default function Index() {
             >
               <Button 
                 size="lg" 
-                className="bg-white text-green-600 hover:bg-white/90 text-lg px-10 py-7 rounded-2xl shadow-2xl font-bold transition-all hover:scale-105"
+                className="bg-white text-blue-600 hover:bg-white/90 text-lg px-10 py-7 rounded-2xl shadow-2xl font-bold transition-all hover:scale-105"
               >
                 <Icon name="Apple" className="mr-2" size={24} />
                 App Store
@@ -150,7 +150,7 @@ export default function Index() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 
-                <div className="absolute top-0 left-0 right-0 h-8 bg-green-600 flex items-center justify-between px-6 text-white text-xs font-semibold">
+                <div className="absolute top-0 left-0 right-0 h-8 bg-blue-600 flex items-center justify-between px-6 text-white text-xs font-semibold">
                   <span>11:22</span>
                   <div className="flex gap-1 items-center">
                     <Icon name="Signal" size={12} />
@@ -160,7 +160,7 @@ export default function Index() {
                 </div>
 
                 <div className="pt-8 pb-20">
-                  <div className="bg-gradient-to-br from-green-500 to-green-400 px-6 py-6 rounded-b-3xl mb-4">
+                  <div className="bg-gradient-to-br from-blue-500 to-cyan-400 px-6 py-6 rounded-b-3xl mb-4">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <motion.div 
@@ -200,7 +200,7 @@ export default function Index() {
                     >
                       <span className="text-lg">СДЕЛАТЬ ЗАРЯДКУ</span>
                       <motion.div 
-                        className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"
+                        className="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                       >
@@ -214,7 +214,7 @@ export default function Index() {
                       <h3 className="font-bold text-gray-900 mb-3 text-lg">Копилка</h3>
                       <div className="grid grid-cols-2 gap-3">
                         <motion.div 
-                          className="bg-gradient-to-br from-green-400 to-green-300 rounded-2xl p-4"
+                          className="bg-gradient-to-br from-cyan-400 to-cyan-300 rounded-2xl p-4"
                           whileHover={{ scale: 1.05, rotate: 2 }}
                         >
                           <div className="text-2xl mb-2">❤️</div>
@@ -222,7 +222,7 @@ export default function Index() {
                           <div className="text-xs text-gray-700">320 сердец</div>
                         </motion.div>
                         <motion.div 
-                          className="bg-gradient-to-br from-green-400 to-green-300 rounded-2xl p-4"
+                          className="bg-gradient-to-br from-cyan-400 to-cyan-300 rounded-2xl p-4"
                           whileHover={{ scale: 1.05, rotate: -2 }}
                         >
                           <div className="text-2xl mb-2">⚡</div>
@@ -235,7 +235,7 @@ export default function Index() {
                     <div>
                       <h3 className="font-bold text-gray-900 mb-3 text-lg">Вознаграждение</h3>
                       <motion.button 
-                        className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-2xl text-sm transition-all"
+                        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-2xl text-sm transition-all"
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                       >
@@ -247,13 +247,13 @@ export default function Index() {
                     </div>
 
                     <motion.div 
-                      className="bg-green-50 rounded-2xl p-4 flex items-center gap-3"
+                      className="bg-blue-50 rounded-2xl p-4 flex items-center gap-3"
                       whileHover={{ scale: 1.03, x: 5 }}
                     >
                       <div className="text-3xl">🛼</div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-bold text-green-600">Ролики</span>
+                          <span className="text-xs font-bold text-blue-600">Ролики</span>
                           <span className="text-xs text-gray-500">105 / 1000 ❤️</span>
                         </div>
                         <div className="text-xs font-bold text-gray-900">TECH TEAM AXOR</div>
@@ -281,7 +281,7 @@ export default function Index() {
                 transition={{ duration: 3, repeat: Infinity }}
               />
               <motion.div 
-                className="absolute -top-8 -left-8 w-40 h-40 bg-green-400/30 rounded-full blur-3xl"
+                className="absolute -top-8 -left-8 w-40 h-40 bg-cyan-400/30 rounded-full blur-3xl"
                 animate={{ scale: [1.2, 1, 1.2], opacity: [0.5, 0.3, 0.5] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
@@ -408,9 +408,9 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="relative py-20 px-4 bg-gradient-to-br from-green-600 to-green-500 overflow-hidden">
+      <section className="relative py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-500 overflow-hidden">
         <motion.div
-          className="absolute bottom-0 left-0 w-96 h-96 bg-green-400/20 rounded-full blur-3xl"
+          className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"
           animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
@@ -443,7 +443,7 @@ export default function Index() {
           >
             <Button 
               size="lg" 
-              className="bg-white text-green-600 hover:bg-white/90 text-lg px-10 py-7 rounded-2xl shadow-2xl font-bold transition-all hover:scale-105"
+              className="bg-white text-blue-600 hover:bg-white/90 text-lg px-10 py-7 rounded-2xl shadow-2xl font-bold transition-all hover:scale-105"
             >
               <Icon name="Apple" className="mr-2" size={24} />
               Скачать для iOS
@@ -514,7 +514,7 @@ export default function Index() {
             ].map((review, idx) => (
               <motion.div 
                 key={idx}
-                className="bg-green-50 rounded-2xl p-6 shadow-lg"
+                className="bg-blue-50 rounded-2xl p-6 shadow-lg"
                 initial={{ opacity: 0, y: 50, rotateY: -20 }}
                 whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
                 viewport={{ once: true }}
@@ -556,7 +556,7 @@ export default function Index() {
             >
               <h3 className="text-2xl font-black mb-4 flex items-center gap-2">
                 ЯЗАРЯДКА
-                <span className="text-base bg-gradient-to-r from-green-400 to-green-300 text-gray-900 px-2 py-1 rounded-lg">AI</span>
+                <span className="text-base bg-gradient-to-r from-cyan-400 to-blue-300 text-gray-900 px-2 py-1 rounded-lg">AI</span>
               </h3>
               <p className="text-gray-400 text-sm">
                 Мобильное приложение для детских спортивных тренировок

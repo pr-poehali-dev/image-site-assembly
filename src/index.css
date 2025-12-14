@@ -15,10 +15,10 @@
     --popover: 220 20% 18%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 271 91% 65%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 326 78% 59%;
+    --secondary: 199 89% 48%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 15% 25%;
@@ -32,18 +32,18 @@
 
     --border: 220 15% 25%;
     --input: 220 15% 25%;
-    --ring: 271 91% 65%;
+    --ring: 217 91% 60%;
 
     --radius: 1rem;
 
     --sidebar-background: 220 26% 14%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 271 91% 65%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 20% 18%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 220 15% 25%;
-    --sidebar-ring: 271 91% 65%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -84,13 +84,13 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .gradient-border {
-    border-image: linear-gradient(135deg, #8b5cf6, #d946ef) 1;
+    border-image: linear-gradient(135deg, #3b82f6, #06b6d4) 1;
   }
 }
